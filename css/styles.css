@@ -1,0 +1,291 @@
+/* Universal  Selector*/
+*{
+    font-family: tahoma;
+}
+body {
+    /* Karena file styles.css ada di dalam folder "css", 
+       kita harus pakai "../" untuk keluar dari folder css, 
+       kemudian masuk ke folder "images", lalu panggil nama fotonya */
+    /* Tambahkan linear-gradient di depan url() untuk membuat efek lapisan putih transparan */
+    /* Ganti 'nama-foto-kamu.jpg' dengan nama file foto yang sedang kamu pakai sekarang */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('../images/Artikel.png'); 
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    color: #333333; 
+    padding: 20px 40px; 
+}
+
+/* type Selector */
+h1{
+    font-size: 30px;
+}
+
+/* class Selector */
+.artikel{
+    font-size: 20px;
+}
+
+.credit{
+    font-size: 12px;
+}
+
+.penulis{
+    color: crimson;
+}
+
+.tanggal{
+    color: darkolivegreen;
+}
+
+/* ID Selector */
+
+#artikel-1{
+    color: darkgoldenrod;
+}
+
+/* child selector */
+
+P>span{
+    color: blueviolet;
+}
+
+/* First Child */
+
+h3+p{
+    color: grey;
+    font-size: 14px;
+}
+
+/* All Child */
+
+h1~p{
+    text-align: justify;
+}
+
+    
+/* --- MULAI CSS TABEL CANTIK --- */
+
+#judultabel {
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+table {
+    border-collapse: separate; /* Diubah ke separate agar border-radius berfungsi */
+    border-spacing: 0;
+    width: 70%;
+    margin: 0 auto 40px auto;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px; /* Membuat sudut tabel melengkung */
+    overflow: hidden; /* Memastikan background tidak keluar dari lengkungan */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Memberikan bayangan lembut di belakang tabel */
+}
+
+th, td {
+    padding: 16px 20px; /* Jarak dalam sel diperbesar agar lebih lega */
+}
+
+/* Desain Header (Bagian atas tabel) */
+thead {  
+    background-color: #00529b; /* Warna biru khas Pertamina */
+    color: #ffffff; /* Teks putih */
+    font-size: 15px;
+    text-transform: uppercase; /* Huruf menjadi kapital semua */
+    letter-spacing: 1px;
+}
+
+/* Desain Isi Tabel */
+tbody tr td {
+    border-bottom: 1px solid #eeeeee; /* Garis pembatas baris yang sangat tipis dan halus */
+    color: #00529b; /* Angka warna biru */
+    font-weight: bold;
+}
+
+/* Menghilangkan garis bawah pada baris paling terakhir */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Pengaturan khusus Kolom ke-2 (Jenis BBM) */
+tbody td:nth-child(2) {
+    text-align: left; /* Rata kiri */
+    color: #444444; /* Warna abu-abu gelap agar tidak terlalu mencolok */
+    font-weight: 500;
+}
+
+/* Efek Hover (Saat mouse diarahkan ke tabel) */
+tbody tr {
+    transition: background-color 0.3s ease; /* Transisi warna yang halus */
+}
+
+tbody tr:hover {
+    background-color: #45e0f5; /* Berubah jadi warna biru sangat muda/soft saat ditunjuk */
+}
+
+/* --- SELESAI CSS TABEL CANTIK --- */
+
+/* Desain untuk baris sekat kategori */
+.sekat {
+    background-color: #f2f2f2; /* Warna latar belakang abu-abu sangat muda */
+}
+
+.sekat td {
+    text-align: center !important; /* Memaksa teks sekat berada di tengah */
+    color: #00529b !important;
+    font-size: 16px;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Menonaktifkan efek warna biru (hover) saat sekat ditunjuk mouse */
+.sekat:hover {
+    background-color: #f2f2f2;
+}
+
+/* Styling untuk halaman utama (Dengan Background Foto) */
+    
+
+
+
+/* --- MULAI CSS NEWS TICKER (MARQUEE) --- */
+.news-ticker-container {
+    display: flex;
+    background-color: #f8f9fa;
+    border-top: 3px solid crimson; /* Mengikuti tema warna penulis */
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    overflow: hidden; 
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.news-ticker-title {
+    background-color: crimson;
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 2; 
+    white-space: nowrap;
+}
+
+.news-ticker-content {
+    width: 100%;
+    overflow: hidden;
+}
+
+.ticker-list {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    white-space: nowrap;
+    animation: marquee 25s linear infinite; 
+}
+
+.ticker-list li {
+    display: inline-block;
+    padding: 10px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #00529b; /* Mengikuti warna dominan web Anda */
+}
+
+.news-ticker-content:hover .ticker-list {
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100vw); } 
+    100% { transform: translateX(-100%); } 
+}
+/* --- SELESAI CSS NEWS TICKER --- */
+/* --- MULAI CSS UNTUK LINK BERITA & TOMBOL KEMBALI --- */
+
+/* Menghilangkan garis bawah dan styling judul berita agar bisa diklik */
+.link-berita {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link-berita h2:hover {
+    color: #00529b; /* Warna biru saat kursor diarahkan */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Desain untuk tombol Kembali ke Beranda */
+.btn-kembali {
+    background-color: #00529b;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-kembali:hover {
+    background-color: crimson; /* Berubah jadi merah saat diarahkan mouse */
+}
+
+/* --- SELESAI CSS UNTUK LINK BERITA & TOMBOL KEMBALI --- */
+
+/* --- MULAI CSS UNTUK LINK BERITA --- */
+
+/* Menghilangkan garis bawah default pada judul berita */
+.link-berita {
+    text-decoration: none;
+    color: inherit; /* Supaya warnanya tetap mengikuti ID #artikel-1 (darkgoldenrod) */
+}
+
+/* Efek saat judul ditunjuk mouse (hover) */
+.link-berita h2:hover {
+    color: #00529b; /* Berubah jadi biru tua */
+    text-decoration: underline; /* Muncul garis bawah */
+}
+
+/* Desain link "Baca Selengkapnya" */
+.link-baca-selengkapnya {
+    color: #00529b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.link-baca-selengkapnya:hover {
+    text-decoration: underline;
+    color: crimson;
+}
+
+/* Desain tombol Kembali di halaman artikel */
+.btn-kembali {
+    display: inline-block;
+    background-color: #00529b;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-kembali:hover {
+    background-color: crimson;
+}
+
+/* --- SELESAI CSS UNTUK LINK BERITA --- */
